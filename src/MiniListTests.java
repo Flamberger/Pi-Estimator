@@ -55,7 +55,7 @@ public class MiniListTests {
         ml.remove(7);
 
         for(int i = 0; i< ml.size(); i++){
-            System.out.println(ml.get(i));
+            System.out.println(ml.get(i) + " " + i);
         }
         //clear
         ml.clear();
