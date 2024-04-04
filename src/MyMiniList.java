@@ -25,7 +25,7 @@ public class MyMiniList <T> implements MiniList<T> {
     @Override
     public T get(int index) {
         try {
-            Objects.checkIndex(index, objectStore.length);
+            Objects.checkIndex(index, listSize);
         } catch (IndexOutOfBoundsException e) {
             return null;
         }
@@ -43,11 +43,11 @@ public class MyMiniList <T> implements MiniList<T> {
     @Override
     public void set(int index, T element) {
         try {
-            Objects.checkIndex(index, objectStore.length);
+            Objects.checkIndex(index, listSize);
             objectStore[index] = element;
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Index out of bounds. Could not insert " + element + " at index " + index);
-            System.out.println("list size is " + objectStore.length);
+            System.out.println("list size is " + listSize);
         }
     }
 
@@ -59,7 +59,7 @@ public class MyMiniList <T> implements MiniList<T> {
     @Override
     public T remove(int index) {
         try {
-            Objects.checkIndex(index, objectStore.length);
+            Objects.checkIndex(index, listSize);
         } catch (IndexOutOfBoundsException e) {
             return null;
         }
